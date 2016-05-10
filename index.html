@@ -4,14 +4,37 @@
 <head>
     <meta charset="utf-8">
     <title>Poesie</title>
-    <link href="/css/style.css">
-    <script type="text/javascript" src="bower_components/angular/angular.js"></script>
-    <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
     <link href="bower_components/font-awesome/css/font-awesome.css">
-  </head>
+    <link rel="stylesheet" href="css/style.css">
+</head>
 
-    <body>
+<body ng-app="appPoesie">
 
-    </body>
+    <div class="header" ng-controller="poesieCtrl">
+        <div class="searchDiv">
+            <form ng-submit="search(word)">
+                <input class="lol" id="searchInput" placeholder="Tapez un mot ici..." type="input" ng-model="word" name="name" value="">
+                <input id="searchButton" type="submit" name="button" value="Rechercher">
+            </form>
+        </div>
+        <div class="categories">
+            <div class="category" ng-repeat="category in categories" ng-click="select()" ng-class="{'active': category.status, 'inactive':category.status == false}">
+                <p>
+                    {{category.name}}
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- name: Poetic Box, Poetiquement Correct, La boite a Poesie, Poetry Hunter -->
+
+
+
+    <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="bower_components/angular-animate/angular-animate.js"></script>
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+</body>
 
 </html>

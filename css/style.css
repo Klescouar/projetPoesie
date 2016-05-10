@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {}
+.header {
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../ecrire.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+#searchInput {
+  width: 280px;
+    height: 40px;
+    margin-right: 7px;
+    animation-name: example;
+    animation-duration: 1s;
+    margin-top: 10px;
+}
+#searchButton {
+    height: 48px;
+    width: 120px;
+    background-color: #47662f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+#searchButton:hover {
+    background-color: #334922;
+}
+.searchDiv {}
+.categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.category p {
+    -webkit-user-select: none;
+    /* Chrome/Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* IE10+ */
+    /* Rules below not implemented in browsers yet */
+    -o-user-select: none;
+    user-select: none;
+      cursor : pointer;
+}
+.category{
+  cursor : pointer;
+
+}
+.inactive {
+    width: 150px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid white;
+    margin: 30px 5px 30px 5px;
+    color: rgb(52, 52, 52);
+    background-color: rgba(255, 255, 255, 0.62)
+}
+.active {
+    width: 150px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid white;
+    margin: 30px 5px 30px 5px;
+    color: rgb(52, 52, 52);
+    background-color: rgba(255, 255, 255, 0.95);
+}
+@keyframes example {
+    0% {
+        width: 0px;
+    }
+    100% {
+        width: 280px;
+    }
+}
+@media screen and (max-width: 440px) {
+  .categories{
+flex-direction: column;
+width: 100%;
+margin-top: 30px;
+  }
+  .category{
+    width: 80%;
+    margin: 10px auto 10px auto;
+  }
+}
