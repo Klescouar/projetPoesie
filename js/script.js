@@ -11,7 +11,6 @@ app.controller('poesieCtrl', ["$scope", "$http", function($scope, $http) {
             var DICOLENGTH = $scope.dico.length;
 
             $scope.search = function(word) {
-              console.log($scope.dico[0]);
                 $scope.syno = [];
                 $scope.ana = [];
                 $scope.rimes = [];
@@ -26,13 +25,14 @@ app.controller('poesieCtrl', ["$scope", "$http", function($scope, $http) {
                         $scope.syno.push($scope.dico[word].synonymes[i]);
                     }
                 }
-                if ($scope.categories[1].status == true) {
+                if ($scope.categories[2].status == true) {
                     for (var i = 0; i < $scope.dico[word].anagramme.length; i++) {
                         $scope.ana.push($scope.dico[word].anagramme[i]);
                     }
                 }
 
-                if ($scope.categories[2].status == true) {
+                if ($scope.categories[1].status == true) {
+                  console.log("lol");
                     var numPoint = $scope.dico[word].phonetique.lastIndexOf(".");
                     var lastSyl = $scope.dico[word].phonetique.slice(numPoint, $scope.dico[word].phonetique.length);
                     for (var i = 0; i < DICOLENGTH; i++) {
