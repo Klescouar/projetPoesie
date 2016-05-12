@@ -141,9 +141,10 @@ body {
 #result{
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 .containerWidth{
-  width: 30%;
+  width: 280px;
 }
 .resultContainer{
   margin: 0px 15px 0px 15px;
@@ -186,6 +187,6 @@ margin-bottom: 50px;
       font-size: 7em;
     }
     .header p:nth-child(2) {
-      font-size: 1em;
+      font-size: 1.4em;
     }
 }

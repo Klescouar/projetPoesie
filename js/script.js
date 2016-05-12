@@ -63,7 +63,7 @@ app.controller('poesieCtrl', ["$scope", "$http", function($scope, $http) {
                         }
                     }
                     if ($scope.rimes.length === 0) {
-                      $scope.rimes.push("Pas de rime disponibles pour ce mot  ")
+                      $scope.rimes.push("Pas de rimes disponibles pour ce mot  ")
                     }
                 }
                 if ($scope.categories[3].status == true) {

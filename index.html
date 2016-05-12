@@ -32,32 +32,32 @@
 
 
     <div id="result">
-        <div class="containerWidth">
-            <div class="resultContainer" ng-show="categories[2].status && ana.length">
+        <div class="containerWidth" ng-show="categories[2].status && ana.length">
+            <div class="resultContainer">
                 <h1>Anagrammes:</h1>
                 <div class="anagramme" ng-repeat="anagramme in ana track by $index">
                     <p>{{anagramme}}</p>
                 </div>
             </div>
         </div>
-        <div class="containerWidth">
-            <div class="resultContainer" ng-show="categories[0].status && syno.length">
+        <div class="containerWidth" ng-show="categories[0].status && syno.length">
+            <div class="resultContainer">
                 <h1>Synonymes:</h1>
                 <div class="synonyme" ng-repeat="synonyme in syno track by $index">
                     <p> {{synonyme}}</p>
                 </div>
             </div>
         </div>
-        <div class="containerWidth">
-            <div class="resultContainer" ng-show="categories[1].status && rimes.length">
+        <div class="containerWidth" ng-show="categories[1].status && rimes.length">
+            <div class="resultContainer" >
                 <h1>Rimes:</h1>
                 <div class="rime" ng-repeat="rime in rimes track by $index">
                     <p>{{rime}}</p>
                 </div>
             </div>
         </div>
-        <div class="containerWidth">
-            <div class="resultContainer" ng-show="categories[3].status && homo.length">
+        <div class="containerWidth" ng-show="categories[3].status && homo.length">
+            <div class="resultContainer">
                 <h1>Homophones:</h1>
                 <div class="hommophone" ng-repeat="homophone in homo track by $index">
                     <p>{{homophone}}</p>
