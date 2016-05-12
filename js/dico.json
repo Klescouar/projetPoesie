@@ -1,0 +1,31 @@
+[{
+    "aa": {
+        "phonetique": "aa",
+        "synonymes": ["cheire"]
+    },
+    "abaissant": {
+        "phonetique": "a.bɛ.sɑ̃",
+        "synonymes": ["avilissant", "dégradant", "humiliant"]
+    },
+    "abaca": {
+        "phonetique": "a.ba.ka"
+    },
+    "abaissable": {
+        "phonetique": "a.bɛ.sabl",
+        "synonymes": ["dépliable", "rabattable"]
+    },
+    "abaisse": {
+        "phonetique": "a.bɛs",
+        "synonymes": ["feuille", "Figuré"]
+    },
+    "abaisser": {
+        "phonetique": "a.bɛ.se"
+    },
+    "abaissement": {
+        "phonetique": "a.bɛs.mɑ̃"
+    },
+    "abandon": {
+        "phonetique": "a.bɑ̃.dɔ̃",
+        "synonymes": ["capitulation", "délaissement", "démission", "départ", "désertion", "lâchage", "négligence", "placage", "vacance", "délaissement", "démission", "départ", "désertion", "renonciation", "apostasie", "défection", "démission", "reniement", "abjuration"]
+    }
+}];
