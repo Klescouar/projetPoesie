@@ -12,6 +12,7 @@ app.controller('poesieCtrl', ["$scope", "$http", function($scope, $http) {
             console.log($scope.dico.length);
 
             $scope.search = function(word) {
+                word = word.toLowerCase();
                 $scope.syno = [];
                 $scope.ana = [];
                 $scope.rimes = [];
