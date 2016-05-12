@@ -11,11 +11,12 @@ app.controller('poesieCtrl', ["$scope", "$http", function($scope, $http) {
             var DICOLENGTH = $scope.dico.length;
 
             $scope.search = function(word) {
+              console.log($scope.dico[0]);
                 $scope.syno = [];
                 $scope.ana = [];
                 $scope.rimes = [];
                 $scope.homo = [];
-console.log($scope.syno);
+
                 if ($scope.categories[0].status == false && $scope.categories[1].status == false && $scope.categories[2].status == false && $scope.categories[3].status == false) {
                     $scope.error = true;
                 }
@@ -35,7 +36,7 @@ console.log($scope.syno);
                     var numPoint = $scope.dico[word].phonetique.lastIndexOf(".");
                     var lastSyl = $scope.dico[word].phonetique.slice(numPoint, $scope.dico[word].phonetique.length);
                     for (var i = 0; i < DICOLENGTH; i++) {
-                      console.log("lol");
+                        console.log("lol");
                         var numPointDico = $scope.dico[i].phonetique.lastIndexOf(".");
                         var lastSylDico = $scope.dico[i].phonetique.slice(numPointDico, $scope.dico[i].phonetique.length);
                         if (lastSyl = lastSylDico) {
