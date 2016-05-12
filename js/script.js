@@ -8,7 +8,8 @@ app.controller('poesieCtrl', ["$scope", "$http", function($scope, $http) {
         .success(function(data) {
             $scope.dico = data;
             $scope.error = false;
-            var DICOLENGTH = $scope.dico.length;
+            var dicolength = $scope.dico.length;
+            console.log($scope.dico.length);
 
             $scope.search = function(word) {
                 $scope.syno = [];
@@ -32,16 +33,19 @@ app.controller('poesieCtrl', ["$scope", "$http", function($scope, $http) {
                 }
 
                 if ($scope.categories[1].status == true) {
-                  console.log("lol");
                     var numPoint = $scope.dico[word].phonetique.lastIndexOf(".");
                     var lastSyl = $scope.dico[word].phonetique.slice(numPoint, $scope.dico[word].phonetique.length);
-                    for (var i = 0; i < DICOLENGTH; i++) {
-                        console.log("lol");
-                        var numPointDico = $scope.dico[i].phonetique.lastIndexOf(".");
-                        var lastSylDico = $scope.dico[i].phonetique.slice(numPointDico, $scope.dico[i].phonetique.length);
-                        if (lastSyl = lastSylDico) {
-                            $scope.rimes.push($scope.dico[i])
+                    for (var mots in $scope.dico) {
+                        var numPointDico = $scope.dico[mots].phonetique.lastIndexOf(".");
+                        var lastSylDico = $scope.dico[mots].phonetique.slice(numPointDico, $scope.dico[mots].phonetique.length);
+                        if (lastSyl === lastSylDico) {
+                            $scope.rimes.push(mots)
                         }
+                    }
+                }
+                if ($scope.categories[3].status == true) {
+                    for (var i = 0; i < $scope.dico[word].homophone.length; i++) {
+                        $scope.homo.push($scope.dico[word].homophone[i]);
                     }
                 }
                 if ($scope.categories[3].status == true) {

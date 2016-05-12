@@ -33,7 +33,7 @@
 
 
     <div id="result">
-        <div class="resultContainer" ng-show="categories[1].status && ana.length">
+        <div class="resultContainer" ng-show="categories[2].status && ana.length">
             <h1>Anagrammes:</h1>
             <div class="anagramme" ng-repeat="anagramme in ana track by $index">
                 <p>{{anagramme}}</p>
@@ -47,7 +47,7 @@
             </div>
         </div>
 
-        <div class="resultContainer" ng-show="categories[2].status && rimes.length">
+        <div class="resultContainer" ng-show="categories[1].status && rimes.length">
             <h1>Rimes:</h1>
             <div class="rime" ng-repeat="rime in rimes track by $index">
                 <p>{{rime}}</p>
