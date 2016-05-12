@@ -21,7 +21,7 @@
 
         <div class="searchDiv">
             <form ng-submit="search(word)">
-                <input  id="searchInput" placeholder="Tapez un mot ici..." type="input" ng-model="word" name="name" value="">
+                <input id="searchInput" placeholder="Tapez un mot ici..." type="input" ng-model="word" name="name" value="">
                 <input id="searchButton" type="submit" ng-click="search(word)" name="button" value="Rechercher">
             </form>
         </div>
@@ -29,7 +29,6 @@
             <source src="audio/poetic.mp3" type="audio/ogg">
         </audio> -->
     </div>
-
 
 
     <div id="result">
@@ -43,7 +42,7 @@
         <div class="resultContainer" ng-show="categories[0].status && syno.length">
             <h1>Synonymes:</h1>
             <div class="synonyme" ng-repeat="synonyme in syno track by $index">
-                <p>- {{synonyme}}</p>
+                <p> {{synonyme}}</p>
             </div>
         </div>
 

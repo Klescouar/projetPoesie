@@ -24,15 +24,16 @@ app.controller('poesieCtrl', ["$scope", "$http", function($scope, $http) {
                 if ($scope.categories[0].status == true) {
                     for (var i = 0; i < $scope.dico[word].synonymes.length; i++) {
                         $scope.syno.push($scope.dico[word].synonymes[i]);
+                        console.log($scope.syno);
                     }
                 }
                 if ($scope.categories[2].status == true) {
-                    for (var i = 0; i < $scope.dico[word].anagramme.length; i++) {
-                        $scope.ana.push($scope.dico[word].anagramme[i]);
+                    for (var i = 0; i < $scope.dico[word].anagrammes.length; i++) {
+                        $scope.ana.push($scope.dico[word].anagrammes[i]);
                     }
                 }
 
-                if ($scope.categories[1].status == true ) {
+                if ($scope.categories[1].status == true) {
                     var numPoint = $scope.dico[word].phonetique.lastIndexOf(".");
                     var lastSyl = $scope.dico[word].phonetique.slice(numPoint, $scope.dico[word].phonetique.length);
                     for (var mots in $scope.dico) {
@@ -42,15 +43,14 @@ app.controller('poesieCtrl', ["$scope", "$http", function($scope, $http) {
                             $scope.rimes.push(mots)
                         }
                     }
-                    console.log($scope.rimes[0]);
                 }
                 if ($scope.categories[3].status == true) {
-                  for (var mots in $scope.dico) {
-                      if ($scope.dico[word].phonetique === $scope.dico[mots].phonetique && word !== mots) {
-                          $scope.homo.push(mots)
-                      }
-                }
-              };
+                    for (var mots in $scope.dico) {
+                        if ($scope.dico[word].phonetique === $scope.dico[mots].phonetique && word !== mots) {
+                            $scope.homo.push(mots)
+                        }
+                    }
+                };
             };
         });
 
