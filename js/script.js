@@ -32,27 +32,25 @@ app.controller('poesieCtrl', ["$scope", "$http", function($scope, $http) {
                     }
                 }
 
-                if ($scope.categories[1].status == true) {
+                if ($scope.categories[1].status == true ) {
                     var numPoint = $scope.dico[word].phonetique.lastIndexOf(".");
                     var lastSyl = $scope.dico[word].phonetique.slice(numPoint, $scope.dico[word].phonetique.length);
                     for (var mots in $scope.dico) {
                         var numPointDico = $scope.dico[mots].phonetique.lastIndexOf(".");
                         var lastSylDico = $scope.dico[mots].phonetique.slice(numPointDico, $scope.dico[mots].phonetique.length);
-                        if (lastSyl === lastSylDico) {
+                        if (lastSyl === lastSylDico && word !== mots) {
                             $scope.rimes.push(mots)
                         }
                     }
+                    console.log($scope.rimes[0]);
                 }
                 if ($scope.categories[3].status == true) {
-                    for (var i = 0; i < $scope.dico[word].homophone.length; i++) {
-                        $scope.homo.push($scope.dico[word].homophone[i]);
-                    }
+                  for (var mots in $scope.dico) {
+                      if ($scope.dico[word].phonetique === $scope.dico[mots].phonetique && word !== mots) {
+                          $scope.homo.push(mots)
+                      }
                 }
-                if ($scope.categories[3].status == true) {
-                    for (var i = 0; i < $scope.dico[word].homophone.length; i++) {
-                        $scope.homo.push($scope.dico[word].homophone[i]);
-                    }
-                }
+              };
             };
         });
 
