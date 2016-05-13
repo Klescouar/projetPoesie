@@ -17,8 +17,9 @@ app.controller('poesieCtrl', ["$scope", "$http", function($scope, $http) {
                 $scope.ana = [];
                 $scope.rimes = [];
                 $scope.homo = [];
+                $scope.anto = [];
 
-                if ($scope.categories[0].status == false && $scope.categories[1].status == false && $scope.categories[2].status == false && $scope.categories[3].status == false) {
+                if ($scope.categories[0].status == false && $scope.categories[1].status == false && $scope.categories[2].status == false && $scope.categories[3].status == false && $scope.categories[4].status == false) {
                     $scope.error = true;
                 }
 
@@ -30,6 +31,15 @@ app.controller('poesieCtrl', ["$scope", "$http", function($scope, $http) {
                         }
                     } else {
                         $scope.syno.push("Pas de synonymes disponibles pour ce mot")
+                    }
+                }
+                if ($scope.categories[4].status == true) {
+                    if ($scope.dico[word].antonymes) {
+                        for (var i = 0; i < $scope.dico[word].antonymes.length; i++) {
+                            $scope.anto.push($scope.dico[word].antonymes[i]);
+                        }
+                    } else {
+                        $scope.anto.push("Pas d'antonymes disponibles pour ce mot")
                     }
                 }
 
@@ -64,7 +74,7 @@ app.controller('poesieCtrl', ["$scope", "$http", function($scope, $http) {
                         }
                     }
                     if ($scope.rimes.length === 0) {
-                      $scope.rimes.push("Pas de rimes disponibles pour ce mot  ")
+                        $scope.rimes.push("Pas de rimes disponibles pour ce mot  ")
                     }
                 }
                 if ($scope.categories[3].status == true) {
@@ -91,6 +101,9 @@ app.controller('poesieCtrl', ["$scope", "$http", function($scope, $http) {
         status: false,
     }, {
         name: "Homophones",
+        status: false,
+    }, {
+        name: "Antonymes",
         status: false,
     }];
 

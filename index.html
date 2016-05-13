@@ -65,6 +65,14 @@
                 </div>
             </div>
         </div>
+        <div class="containerWidth" ng-show="categories[4].status && anto.length">
+            <div class="resultContainer">
+                <h1>Antonymes:</h1>
+                <div class="hommophone" ng-repeat="antonyme in anto track by $index">
+                    <p>{{antonyme}}</p>
+                </div>
+            </div>
+        </div>
 
     </div>
 
